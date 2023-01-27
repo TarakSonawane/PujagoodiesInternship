@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".YoutubeActivity">
+
+    <TextView
+        android:id="@+id/live"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Live Streams"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textSize="22dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/refbg"/>
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        app:layout_constraintTop_toBottomOf="@id/live"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/most"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/recyclerviewlive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:layout_marginTop="10dp"
+            android:id="@+id/progresslive"
+            android:foregroundGravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/omlive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/greenbg"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="Fetching Live Videos...\nHari Krishna!"
+            android:textColor="#FF5722"
+            android:textFontWeight="500"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progresslive" />
+
+
+
+        <TextView
+            android:id="@+id/noStream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Live Streams Available..."
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/most"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintBottom_toTopOf="@id/recyclerviewmostview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Watched Videos"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textSize="22dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/greenbg"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/recyclerviewmostview"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/most"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"/>
+
+    <ProgressBar
+        android:layout_marginTop="10dp"
+        android:id="@+id/progressmost"
+        app:layout_constraintTop_toBottomOf="@id/most"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:foregroundGravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:id="@+id/ommost"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@drawable/greenbg"
+        android:textFontWeight="500"
+        android:padding="7dp"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Fetching Most Watched Videos...\nHari Krishna!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressmost"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
