@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    static int duration=4000;
+    static int duration=4001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
